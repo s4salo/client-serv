@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Календарь</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  #calendar { margin: 50px auto; width: 300px; }
+  .header { text-align: center; }
+  .week { display: flex; }
+  .day {
+    width: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="calendar">
+  <div class="header">
+    
+    <h2 id="monthAndYear"></h2>
+  </div>
+  <div class="week">
+    
+    <div class="day"><strong>Пн</strong></div>
+    <div class="day"><strong>Вт</strong></div>
+    <div class="day"><strong>Ср</strong></div>
+    <div class="day"><strong>Чт</strong></div>
+    <div class="day"><strong>Пт</strong></div>
+    <div class="day"><strong>Сб</strong></div>
+    <div class="day"><strong>Вс</strong></div>
+  </div>
+  <div id="daysContainer"></div>
+</div>
+
+<script>
+// Получение текущей даты
+const today = new Date();
+const currentMonth = today.getMonth();
+const currentYear = today.getFullYear();
+
+function getMonthName(monthIndex) {
+  const monthNames = [
+    'Январь', 'Февраль', 'Март', 'Апрель',
+    'Май', 'Июнь', 'Июль', 'Август',
+    'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+  ];
+  return monthNames[monthIndex];
+}
+
+// Заполнение календаря днями
+function populateCalendar(month, year) {
+  const daysContainer = document.getElementById('daysContainer');
+  const monthAndYear = document.getElementById('monthAndYear');
+  
+  monthAndYear.textContent = `${getMonthName(month)} ${year}`;
+
+  const firstDay = (new Date(year, month)).getDay();
+  daysContainer.innerHTML = '';
+
+  const daysInMonth = 32 - new Date(year, month, 32).getDate();
+  
+  let date = 1;
+  for (let i = 0; i < 6; i++) {
+    // недели
+    const week = document.createElement('div');
+    week.className = 'week';
+    
+    for (let j = 0; j < 7; j++) {
+      if (i === 0 && j < firstDay - 1) {
+        // Если первый день месяца еще не наступил
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'day';
+        week.appendChild(emptyDay);
+      } else if (date > daysInMonth) {
+        // Если все дни месяца уже были
+        break;
+      } else {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'day';
+        if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+          dayElement.style.backgroundColor = '#add8e6';
+        }
+        dayElement.textContent = date;
+        week.appendChild(dayElement);
+        date++;
+      }
+    }
+    
+    daysContainer.appendChild(week);
+  }
+}
+
+populateCalendar(currentMonth, currentYear);
+</script>
+</body>
+</html>
