@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0; /* Отступы по умолчанию у body убираем */
+}
+
+#description {
+    color:#ffffff;
+    
+}
+.container {
+    width: 75%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    border-radius: 5px;
+    background-color: #009688;
+    
+}
+
+
+.profile-img {
+    position: relative;
+    width: 150px;
+    height: 170px;
+    border-radius: 17%;
+    margin: 0 auto;
+    padding: 1.5%;
+    display: block; 
+    z-index: 2;
+}
+
+
+
+.content {
+    display: flex;
+    justify-content:stretch;
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.text-content {
+    flex: 1; 
+    min-width: 250px; 
+    max-width: 60%; 
+    margin: 10px;
+}
+
+.charts {
+    border: #009688 solid 3px;
+    border-radius: 5px;
+    flex: 1; 
+    min-width: 10%; 
+    max-width: 80%; 
+    display: flex; 
+    flex-direction:column; 
+    align-items: center; 
+    margin-left: 5%;
+}
+
+table {
+    width: 100%; 
+    margin-top: 20px; 
+    table-layout: fixed; 
+    border: none; 
+}
+
+td {
+    border: none; 
+    text-align:justify; 
+    padding: 6px;
+    background-color: #ffffff;
+    vertical-align: middle; 
+}
+
+
+.chart-card {
+    padding-left: 10px;
+    text-align: left; 
+    margin: 10px 0;
+    vertical-align: middle;
+}
+
+.chart-card p {
+    margin-top: 10px; 
+}
+.chart-card canvas {
+    width: 78% !important;
+    height: 78% !important;
+}
+
+.canvas-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.content-page {
+    display: none;
+    max-height: 700px; 
+    overflow-y: auto; 
+}
+
+.content-page.active {
+    display: block;
+}
+
+nav button {
+    background-color: #e7e7e7;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+nav button:hover {
+    background-color: #d7d7d7;
+}
+
+nav button.active {
+    background-color: #009688;
+    color: white;
+}

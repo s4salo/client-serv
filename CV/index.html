@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме DWH Разработчика</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/profile.jpg" alt="Фото профиля" class="profile-img">
+            <div id="description">
+                <h2>Гаврилюк Александр</h2>
+                <p>DWH Разработчик</p>
+            </div>
+            
+                        
+        </header>
+        <div class="content">
+            <div class="text-content">
+                <nav>
+                    <button id="btn-about">Обо мне</button>
+                    <button id="btn-experience">Опыт работы</button>
+                </nav>
+                <div id="about" class="content-page active">
+                    <h3>Обо мне</h3>
+                    <p>Высококвалифицированный специалист в области разработки хранилищ данных (DWH). Обладаю глубокими знаниями SQL, опытом работы с ETL-процессами и инструментами бизнес-аналитики. Решаю сложные задачи, оптимизирую процессы и создаю надежные решения для хранения и обработки больших объемов данных.</p>
+                </div>
+                <div id="experience" class="content-page hidden">
+                    <h3>Опыт работы</h3>
+                    <ul>
+                        <li><strong>Газпромнефть</strong> - DWH Разработчик, 2018-2021
+                            <p>Разработка и оптимизация ETL-процессов, поддержка и улучшение производительности данных.</p>
+                        </li>
+                        <li><strong>Сургутнефтегаз</strong> - Junior DWH Разработчик, 2004-2018
+                            <p>Обучение концепциям хранения данных, разработка отчетов и дашбордов.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="charts">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="chart-card">
+                                <canvas id="sqlChart"></canvas>
+                                <p>Владение SQL</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chart-card">
+                                <canvas id="etlChart"></canvas>
+                                <p>Опыт работы c ETL</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="chart-card">
+                                <canvas id="biChart"></canvas>
+                                <p>Знание BI инструментов</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="chart-card">
+                                <canvas id="pyChart"></canvas>
+                                <p>Знание ЯП python</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
